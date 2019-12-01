@@ -18,7 +18,6 @@ public class QuickSort {
     static int partition(int[] arr,int low,int high){
         int N = high - low + 1;
         int index = low +(int) (Math.random()*N);
-        System.out.println("Index " + index);
         int i=low-1;
         int pivot = arr[index];
         int swap_temp=0;
@@ -39,10 +38,6 @@ public class QuickSort {
         arr[i+1]= arr[high];
         arr[high] = swap_temp;
 
-        for(int j=0;j<=high;j++){
-            System.out.print(arr[j] + " ");
-        }
-        System.out.println("return is " + i);
         return i+1;
     }
 }
