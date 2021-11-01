@@ -2,8 +2,9 @@ package arrays;
 
 public class EquilibriumPoint {
     public static void main(String[] args) {
-        int[] arr = {20,17,42,25,32,32,30,32,37,9,2,33,31,17,14,40,9,12,36,21,8,33,6,6,10,37,12,26,21,3};
-        System.out.println(equlibrium(arr,30));
+       // int[] arr = {20,17,42,25,32,32,30,32,37,9,2,33,31,17,14,40,9,12,36,21,8,33,6,6,10,37,12,26,21,3};
+        int[] arr = {-7, 1, 5, 2, -4, 3, 0};
+        System.out.println(equlibrium(arr,7));
     }
     private static int equlibrium(int[] arr, int n){
         int total_sum=0;

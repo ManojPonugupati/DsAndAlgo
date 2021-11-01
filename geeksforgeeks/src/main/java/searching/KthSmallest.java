@@ -15,7 +15,6 @@ public class KthSmallest {
                 for (int j = 0; j < N; j++)
                     arr[j] = in.nextInt();
                 int k=in.nextInt();
-                System.out.println(kthSmallest(arr,0,arr.length-1,k));
             }
         }
 

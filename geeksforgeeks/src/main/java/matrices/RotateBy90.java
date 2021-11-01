@@ -1,45 +1,38 @@
 package matrices;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+
 public class RotateBy90 {
     public static void main(String[] args) {
-        int[][] mat = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},
-                {21,22,23,24,25}};
-        rotateBy90(mat,mat.length);
-    }
-    public static void rotateBy90(int[][]mat,int n){
-        mat = transpose(mat,n);
-        int swap=0;
-        if(n%2 == 0){
-           for(int i=0;i<n/2;i++) {
-               for (int j = 0; j <n; j++) {
-                   swap = mat[i][j];
-                   mat[i][j] = mat[n - i - 1][j];
-                   mat[n - i - 1][j] = swap;
-               }
-           }
-        }else {
-            for(int i=0;i<=n/2;i++) {
-                for (int j = 0; j < n; j++) {
-                    swap = mat[i][j];
-                    mat[i][j] = mat[n - i - 1][j];
-                    mat[n - i - 1][j] = swap;
-                }
+       // Integer[][] mat = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},
+        //        {21,22,23,24,25}};
+        Integer[][] mat = {{1,2,3},{4,5,6},{7,8,9}};
+        ArrayList<ArrayList<Integer>> ar = new ArrayList<>();
+        for(int i=0;i<mat.length;i++){
+            ArrayList<Integer> ar1=new ArrayList<>();
+            ar1.addAll(Arrays.asList(mat[i]));
+            ar.add(ar1);
+        }
+        System.out.println("ArrayList output is");
+        for(ArrayList<Integer> list:ar){
+            for(Integer element:list){
+                System.out.print(element + " ");
             }
+            System.out.println();
+        }
+        //SwapArrayList swap = new SwapArrayList();
+        //swap.rotateBy90(ar);
+        AntiDiagonals antiDiagonals = new AntiDiagonals();
+        antiDiagonals.antiDiagonals(ar);
+        System.out.println("After swapping");
+        for(ArrayList<Integer> list:ar){
+            for(Integer element:list){
+                System.out.print(element + " ");
+            }
+            System.out.println();
         }
     }
-    public static int[][] transpose(int[][]mat,int n){
-        int swap=0;
-        for(int i=0;i<n;i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (i == j) {
-                    continue;
-                } else {
-                    swap = mat[i][j];
-                    mat[i][j] = mat[j][i];
-                    mat[j][i] = swap;
-                }
-            }
-        }
-           return mat;
-    }
+
 }
