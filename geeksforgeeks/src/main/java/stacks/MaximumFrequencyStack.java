@@ -1,6 +1,5 @@
 package stacks;
 
-import com.sun.javafx.scene.control.skin.IntegerFieldSkin;
 
 import java.util.HashMap;
 import java.util.Map;
