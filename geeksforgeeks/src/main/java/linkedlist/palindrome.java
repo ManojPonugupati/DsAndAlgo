@@ -11,7 +11,13 @@ public class palindrome {
         B.next=C;
         C.next=D;
         D.next=E;
-        System.out.println(checkPalindrom(A));
+        ListNode x = new ListNode(1);
+        x.next = new ListNode(2);
+        x.next.next = new ListNode(2);
+        x.next.next.next = new ListNode(1);
+
+        System.out.println(checkPalindrom(x));
+        System.out.println(checkPalindromicSubStringWithNoExtraSpace(A));
     }
     public static int checkPalindrom(ListNode head){
         ListNode x= head;
@@ -43,5 +49,33 @@ public class palindrome {
             current=next;
         }
         return previous;
+    }
+
+    public static int checkPalindromicSubStringWithNoExtraSpace(ListNode head){
+        ListNode curr = head,prev=null,nxt = null;
+        int max = -1;
+        int even=0,odd=0;
+        while(curr !=null){
+            nxt=curr.next;
+            curr.next=prev;
+            odd = 2 * getMatchingCount(prev,nxt) + 1;
+            even= 2 * getMatchingCount(curr,nxt);
+            int localMax = Math.max(even,odd);
+            max = Math.max(max,localMax);
+            prev=curr;
+            curr=nxt;
+        }
+        return max;
+    }
+    public static int getMatchingCount(ListNode node1,ListNode node2){
+        int cnt =0;
+        for(;node1 !=null && node2 != null; node1=node1.next,node2=node2.next){
+            if(node1.val == node2.val){
+                cnt++;
+            }else {
+                break;
+            }
+        }
+        return cnt;
     }
 }

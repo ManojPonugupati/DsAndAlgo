@@ -1,14 +1,17 @@
 package recursion;
 
 public class TestRecursion {
-    public static void main(String[] args) {
-        System.out.println("final out " + testRec(3));
+    public static void main(String[] args)
+    {
+        testRec(3);
     }
 
-    public static int testRec(int n){
-        if(n==0) return 0;
-        System.out.println("rec data " + n);
-        return n+testRec(n-1);
+    public static void testRec(int n){
+        if(n==0) return;
+        System.out.println("Bef data " + n);
+        testRec(n-1);
+        System.out.println("Aft data" + n);
+        testRec(n-1);
     }
 
 }

@@ -9,6 +9,5 @@ public class MergeKSortedLists {
     static ListNode val;
     public static void main(String[] args) {
 
-          ListNode l1 = new ListNode();
     }
 }
