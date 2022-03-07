@@ -184,7 +184,7 @@ public class BinaryTreeFromInorderPostOrderArray {
         root.left = recBuildTree(in,post,st,idx-1,pos-1-(end-idx));
         return root;
     }
-    public static boolean  checkHeighIsBalancedOrNot(TreeNode A,boolean isBalanced){
+    private static boolean  checkHeighIsBalancedOrNot(TreeNode A,boolean isBalanced){
         int l,r;
         l = getHeight(A.left);
         r = getHeight(A.right);
@@ -193,7 +193,7 @@ public class BinaryTreeFromInorderPostOrderArray {
         checkHeighIsBalancedOrNot(A.right,isBalanced);
         return isBalanced;
     }
-    public static int getHeight(TreeNode A){
+    private static int getHeight(TreeNode A){
         int l,r;
         if(A==null) return -1;
         l= getHeight(A.left);

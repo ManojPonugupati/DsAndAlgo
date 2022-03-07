@@ -1,17 +1,23 @@
 package recursion;
 
+import java.util.Stack;
+
 public class TestRecursion {
     public static void main(String[] args)
     {
-        testRec(3);
+        Stack<Integer> st = new Stack<>();
+        testRec(5,st);
+        while (st.size() > 0){
+            System.out.println(st.pop());
+        }
     }
 
-    public static void testRec(int n){
-        if(n==0) return;
-        System.out.println("Bef data " + n);
-        testRec(n-1);
-        System.out.println("Aft data" + n);
-        testRec(n-1);
+    public static Stack<Integer> testRec(int n,Stack<Integer> st){
+        if(n==0) return st;
+        if(n==3) return st;
+        st.push(n);
+        testRec(n-1,st);
+        return st;
     }
 
 }
